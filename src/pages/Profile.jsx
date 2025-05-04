@@ -68,11 +68,20 @@ const Profile = () => {
       <div className="flex items-center justify-center gap-20">
         <div className="avatar">
           <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img
-              src={`${import.meta.env.VITE_APP_API_URL}${userByUsername?.profileImage}`}
-              alt="Profile"
-              crossOrigin="anonymous"
-            />
+          <img
+  src={
+    userByUsername?.profileImage
+      ? `${import.meta.env.VITE_APP_API_URL}${userByUsername.profileImage}`
+      : "https://placehold.co/150x150"
+  }
+  alt="Profile"
+  crossOrigin="anonymous"
+  onError={(e) => {
+    e.target.onerror = null;
+    e.target.src = "https://placehold.co/150x150";
+  }}
+/>
+
           </div>
         </div>
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">

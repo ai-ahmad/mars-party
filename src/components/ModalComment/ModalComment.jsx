@@ -31,7 +31,7 @@ const ModalComment = ({ isOpen, onClose, comments, onAddComment }) => {
                         comments.map((comment, index) => (
                             <div key={index} className="flex items-center gap-2">
                                 <div>
-                                    <img className="w-8 h-8 rounded-full" src={`${import.meta.env.VITE_APP_API_URL}${comment?.userId.profileImage}`} crossOrigin="anonymous" alt="" />
+                                    {/* <img className="w-8 h-8 rounded-full" src={`${import.meta.env.VITE_APP_API_URL}${comment?.userId.profileImage}`} crossOrigin="anonymous" alt="" /> */}
                                 </div>
                                 <div className="flex flex-col">
                                     <p className="text-sm font-bold">{comment?.userId?.username}</p>
